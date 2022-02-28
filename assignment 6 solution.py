@@ -9,5 +9,10 @@ cnx = mysql.connector.connect(
 
 cur = cnx.cursor()
 
+#1
+cur.execute("""CREATE VIEW Faculty AS
+SELECT ID, Dept_name, Name
+FROM instructor;""")
+
 cnx.commit()
 cnx.close()
