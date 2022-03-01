@@ -14,5 +14,11 @@ cur.execute("""CREATE VIEW Faculty AS
 SELECT ID, Dept_name, Name
 FROM instructor;""")
 
+#2
+cur.execute("""CREATE VIEW View2 AS
+SELECT Dept_name, SUM(Salary)
+FROM instructor
+GROUP BY Dept_name;""")
+
 cnx.commit()
 cnx.close()
