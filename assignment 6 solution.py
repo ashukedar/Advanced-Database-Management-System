@@ -20,5 +20,8 @@ SELECT Dept_name, SUM(Salary)
 FROM instructor
 GROUP BY Dept_name;""")
 
+#3
+cur.execute("CREATE ROLE student;")
+
 cnx.commit()
 cnx.close()
