@@ -23,5 +23,9 @@ GROUP BY Dept_name;""")
 #3
 cur.execute("CREATE ROLE student;")
 
+#4
+cur.execute("""GRANT SELECT on faculty
+TO student;""")
+
 cnx.commit()
 cnx.close()
