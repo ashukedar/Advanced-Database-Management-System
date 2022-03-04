@@ -27,5 +27,9 @@ cur.execute("CREATE ROLE student;")
 cur.execute("""GRANT SELECT on faculty
 TO student;""")
 
+#5
+cur.execute("""CREATE USER 'ashutosh'@'localhost' IDENTIFIED BY 'password';
+GRANT student to 'ashutosh'@'localhost';""")
+
 cnx.commit()
 cnx.close()
