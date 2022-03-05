@@ -31,5 +31,9 @@ TO student;""")
 cur.execute("""CREATE USER 'ashutosh'@'localhost' IDENTIFIED BY 'password';
 GRANT student to 'ashutosh'@'localhost';""")
 
+#6
+#cur.execute("GRANT SELECT ON faculty To 'ashutosh'@'localhost';")
+cur.execute("REVOKE SELECT ON faculty FROM 'ashutosh'@'localhost';")
+
 cnx.commit()
 cnx.close()
