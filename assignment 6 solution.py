@@ -35,5 +35,8 @@ GRANT student to 'ashutosh'@'localhost';""")
 #cur.execute("GRANT SELECT ON faculty To 'ashutosh'@'localhost';")
 cur.execute("REVOKE SELECT ON faculty FROM 'ashutosh'@'localhost';")
 
+#7
+cur.execute("DROP role student")
+
 cnx.commit()
 cnx.close()
