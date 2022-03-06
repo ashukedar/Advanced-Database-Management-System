@@ -38,5 +38,8 @@ cur.execute("REVOKE SELECT ON faculty FROM 'ashutosh'@'localhost';")
 #7
 cur.execute("DROP role student")
 
+#8
+cur.execute("GRANT SELECT ON faculty TO 'ashutosh'@'localhost';")
+
 cnx.commit()
 cnx.close()
