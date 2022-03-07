@@ -38,8 +38,18 @@ cur.execute("REVOKE SELECT ON faculty FROM 'ashutosh'@'localhost';")
 #7
 cur.execute("DROP role student")
 
-#8 
+#8
 cur.execute("GRANT SELECT ON faculty TO 'ashutosh'@'localhost';")
+
+#9
+cur.execute("""CREATE TABLE teaches2(
+    ID numeric(10,2),
+    Course_id varchar(6),
+    sec_id numeric(10,2),
+    semester varchar(10),
+    year year
+    CHECK(semester in ('Fall', 'Summer', 'Spring'))
+);""")
 
 cnx.commit()
 cnx.close()
