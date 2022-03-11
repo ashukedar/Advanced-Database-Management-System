@@ -51,5 +51,8 @@ cur.execute("""CREATE TABLE teaches2(
     CHECK(semester in ('Fall', 'Summer', 'Spring'))
 );""")
 
+#10
+cur.execute("CREATE INDEX instructor_index ON teaches (ID);")
+
 cnx.commit()
 cnx.close()
