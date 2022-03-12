@@ -54,5 +54,8 @@ cur.execute("""CREATE TABLE teaches2(
 #10
 cur.execute("CREATE INDEX instructor_index ON teaches (ID);")
 
+#11
+cur.execute("DROP INDEX instructor_index ON teaches;")
+
 cnx.commit()
 cnx.close()
