@@ -15,5 +15,24 @@ febSalary = float(input("Enter the Feb salary: "))
 marSalary = float(input("Enter the Mar salary: "))
 print("Total Salary for quarter 1:", janSalary + febSalary + marSalary)
 
+#2
+cur.execute("""
+CREATE TABLE instructor(
+    ID int,
+    name varchar(200),
+    dept_name varchar(200),
+    salary numeric(10,2),
+    age numeric(10,0)
+);""")
+instructors = [
+    (10101,'Srinivasan','Comp. Sci.',65000, 34),
+	(12121,'Wu','Finance',90000, 38),
+	(15151,'Mozart','Music',40000, 45),
+	(22222,'Einstein','Physics',95000, 55)]
+cur.executemany("""
+    INSERT INTO 
+    instructor(ID, name, dept_name, salary, age)
+    VALUES (%s, %s, %s, %s, %s)""", instructors)
+
 cnx.commit()
 cnx.close()
