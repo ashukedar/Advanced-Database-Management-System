@@ -34,5 +34,13 @@ cur.executemany("""
     instructor(ID, name, dept_name, salary, age)
     VALUES (%s, %s, %s, %s, %s)""", instructors)
 
+#3
+cur.execute("""
+CREATE FUNCTION isEligible(age INTEGER) 
+    RETURNS VARCHAR(20) 
+    BEGIN 
+        RETURN IF(age>40, 'YES', 'NO'); 
+    END;""")
+
 cnx.commit()
 cnx.close()
