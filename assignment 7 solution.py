@@ -42,5 +42,11 @@ CREATE FUNCTION isEligible(age INTEGER)
         RETURN IF(age>40, 'YES', 'NO'); 
     END;""")
 
+#4
+cur.execute("SELECT IsEligible(Age) from instructor;")
+result = cur.fetchall()
+for x in result:
+    print(x)
+
 cnx.commit()
 cnx.close()
